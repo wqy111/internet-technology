@@ -41,12 +41,12 @@ def add_category(request):
 # A HTTP POST?
     if request.method == 'POST':
         form = CategoryForm(request.POST)
-        if form.is_valid():
-            cat = form.save(commit=True)
-            print(cat, cat.slug)
-            return index(request)
-        else:
-            print(form.errors)
+    if form.is_valid():
+        cat = form.save(commit=True)
+        print(cat, cat.slug)
+        return index(request)
+    else:
+        print(form.errors)
         return render(request, 'rango/add_category.html', {'form': form})
 def add_page(request, category_name_slug):
     try:
