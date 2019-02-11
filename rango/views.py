@@ -18,6 +18,9 @@ def index(request):
     #return HttpResponse("Rango says hey there partner!  <br/> <a href='/rango/about/'>About</a>")
 def about(request):
     #return HttpResponse("Rango says here is the about page. <br/> <a href='/rango/'>Index</a>")
+    print(request.method)
+    # prints out the user name, if no one is logged in it prints `AnonymousUser`
+    print(request.user)
     return render(request, 'rango/about.html', {})
 
 def show_category(request, category_name_slug):
@@ -70,3 +73,7 @@ def add_page(request, category_name_slug):
     context_dict = {'form': form, 'category': category}
 
     return render(request, 'rango/add_page.html', context_dict)
+#
+# def get_category_list(cat=None):
+#     return {'cats': Category.objects.all(),
+#             'act_cat': cat}
