@@ -1,19 +1,11 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>Rango</title>-->
-<!--</head>-->
-{% extends 'rango/base.html' %}
-{% load staticfiles %}
-<!--<body>-->
-        <!--<h1>Add a Category</h1>-->
-{% block title_block %}
-    Add Category
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango - Add Category</title>
+    </head>
 
-{% block body_block %}
-    <h1>Add a Category</h1>
+    <body>
+        <h1>Add a Category</h1>
         <div>
             <form id="category_form" method="post" action="/rango/add_category/">
                 {% csrf_token %}
@@ -28,6 +20,5 @@
                 <input type="submit" name="submit" value="Create Category" />
             </form>
         </div>
-    <!--</body>-->
-<!--</html>-->
-{% endblock %}
+    </body>
+</html>
